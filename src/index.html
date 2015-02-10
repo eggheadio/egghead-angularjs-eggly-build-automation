@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="Eggly">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Eggly</title>
+        <!-- inject:css -->
+        <!-- any *.css files among your sources will go here as: <link rel="stylesheet" href="FILE"> -->
+        <!-- endinject -->
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar" ui-view="categories"></div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ui-view="bookmarks"></div>
+            </div>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.js"></script>
+        <script src="vendor/angular-ui-router.min.js"></script>
+
+        <!-- inject:js -->
+        <!-- any *.js files among your sources will go here as: <script src="FILE"></script> -->
+        <!-- endinject -->
+    </body>
+</html>
+
+
+
+
+

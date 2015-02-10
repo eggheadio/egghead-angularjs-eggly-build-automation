@@ -1,0 +1,5 @@
+/.idea
+build
+bin
+node_modules
+.DS_Store
