@@ -10,7 +10,8 @@ var gulp = require('gulp'),
     ngmin = require("gulp-ng-annotate"),
     _ = require('lodash'),
     uglify = require('gulp-uglify'),
-    pkg = require('./package.json');
+    pkg = require('./package.json'),
+    jshint = require('gulp-jshint');
 
 
 var files = require('./gulp/gulp.config.js');
@@ -182,9 +183,14 @@ gulp.task('compile', function (callback) {
         callback);
 });
 
+gulp.task('lint', function() {
+    return gulp.src(files.app_files.js)
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
+});
 
 gulp.task('watch', function () {
-    gulp.watch(files.app_files.js, ['build-src']);
+    gulp.watch(files.app_files.js, ['lint', 'build-src']);
     gulp.watch(files.app_files.atpl, ['html2js', 'index']);
     gulp.watch(files.app_files.html, ['index']);
     gulp.watch(files.app_files.styles, ['less', 'index']);

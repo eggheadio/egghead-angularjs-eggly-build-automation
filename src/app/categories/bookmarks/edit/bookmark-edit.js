@@ -15,7 +15,7 @@ angular.module('categories.bookmarks.edit', [])
         function returnToBookmarks() {
             $state.go('eggly.categories.bookmarks', {
                 category: $stateParams.category
-            })
+            });
         }
 
         function updateBookmark() {
