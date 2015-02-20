@@ -4,7 +4,7 @@ angular.module('eggly.models.categories', [
     .service('CategoriesModel', function ($http, $q) {
         var model = this,
             URLS = {
-                FETCH: 'data/categories.json'
+                FETCH: '/api/categories'
             },
             categories,
             currentCategory;

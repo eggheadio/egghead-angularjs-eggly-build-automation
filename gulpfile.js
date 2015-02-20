@@ -61,16 +61,11 @@ gulp.task('clean-bin', function (callback) {
     del(['./bin'], {force: true}, callback)
 });
 
-gulp.task('copy-build', ['copy-assets', 'copy-data', 'copy-app-js', 'copy-vendor-js']);
+gulp.task('copy-build', ['copy-assets', 'copy-app-js', 'copy-vendor-js']);
 
 gulp.task('copy-assets', function () {
     return gulp.src('./src/assets/**/*')
         .pipe(gulp.dest('./build/assets'));
-});
-
-gulp.task('copy-data', function () {
-    return gulp.src('./data/**/*')
-        .pipe(gulp.dest('./build/data'));
 });
 
 gulp.task('copy-app-js', function () {
@@ -78,18 +73,12 @@ gulp.task('copy-app-js', function () {
         .pipe(gulp.dest('./build'));
 });
 
-gulp.task('copy-compile', ['copy-compile-assets', 'copy-compile-data']);
+gulp.task('copy-compile', ['copy-compile-assets']);
 
 gulp.task('copy-compile-assets', function () {
     return gulp.src(files.app_files.assets_compile)
         .pipe(gulp.dest('./bin/assets'));
 });
-
-gulp.task('copy-compile-data', function () {
-    return gulp.src(files.app_files.data_compile)
-        .pipe(gulp.dest('./bin/data'));
-});
-
 
 gulp.task('copy-vendor-js', function () {
     return gulp.src(files.vendor_files.js, {cwd: 'vendor/**'})
