@@ -52,14 +52,12 @@ function sendDefault(req, res) {
 
   if (splitPath.length > 2)
     endpoint = splitPath[splitPath.length - 2];
-
-  console.log(endpoint);
-
+  
   try {
-    mockResponse = getMock(mockPath);
-    res.status(200).send(JSON.parse(mockResponse))
+    
+    res.json(getMock(mockPath))
   } catch (err) {
-    console.log(err);
+    console.log("something bad happened", err);
     res.status(500).send(JSON.parse(err));
   }
 }
