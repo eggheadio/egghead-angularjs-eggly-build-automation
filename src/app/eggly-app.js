@@ -1,7 +1,8 @@
 angular.module('Eggly', [
     'ui.router',
     'categories',
-    'categories.bookmarks'
+    'categories.bookmarks',
+    'templates-app'
 ])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider

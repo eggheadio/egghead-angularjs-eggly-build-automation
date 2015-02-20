@@ -12,7 +12,7 @@ angular.module('categories.bookmarks', [
                 //to show bookmarks for a specific category
                 views: {
                     'bookmarks@': {
-                        templateUrl: 'app/categories/bookmarks/bookmarks.tmpl.html',
+                        templateUrl: 'categories/bookmarks/bookmarks.tmpl.html',
                         controller: 'BookmarksListCtrl as bookmarksListCtrl'
                     }
                 }
