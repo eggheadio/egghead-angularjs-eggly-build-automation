@@ -1,0 +1,27 @@
+{
+  "name": "egghead-angularjs-eggly-build-automation",
+  "version": "1.0.0",
+  "description": "eggly =====",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eggheadio/egghead-angularjs-eggly-build-automation.git"
+  },
+  "keywords": [
+    "egghead",
+    "gulp",
+    "tutorial"
+  ],
+  "author": "Lukas Ruebbelke <simpul@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eggheadio/egghead-angularjs-eggly-build-automation/issues"
+  },
+  "homepage": "https://github.com/eggheadio/egghead-angularjs-eggly-build-automation",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
+}
