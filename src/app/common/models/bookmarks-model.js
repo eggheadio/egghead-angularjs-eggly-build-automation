@@ -2,7 +2,7 @@ angular.module('eggly.models.bookmarks', [])
     .service('BookmarksModel', function ($http, $q) {
         var model = this,
             URLS = {
-                FETCH: '/api/bookmarks'
+                FETCH: '../data/bookmarks/default.json'
             },
             bookmarks;
 

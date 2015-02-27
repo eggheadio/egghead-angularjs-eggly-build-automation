@@ -9,13 +9,13 @@ angular.module('categories', [
                     //target the ui-view named 'categories' in ROOT state (eggly)
                     'categories@': {
                         controller: 'CategoriesListCtrl as categoriesListCtrl',
-                        templateUrl: 'categories/categories.tmpl.html'
+                        templateUrl: '/app/categories/categories.tmpl.html'
                     },
                     //target the ui-view named 'bookmarks' in ROOT state (eggly)
                     //to show all bookmarks for all categories
                     'bookmarks@': {
                         controller: 'BookmarksListCtrl as bookmarksListCtrl',
-                        templateUrl: 'categories/bookmarks/bookmarks.tmpl.html'
+                        templateUrl: '/app/categories/bookmarks/bookmarks.tmpl.html'
                     }
                 }
             })
