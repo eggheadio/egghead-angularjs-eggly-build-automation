@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
   del = require('del'),
-  runSequence = require('run-sequence');
+  runSequence = require('run-sequence'),
+  inject = require("gulp-inject");
 
 gulp.task('default', function(callback) {
   runSequence('build', callback);
@@ -9,6 +10,7 @@ gulp.task('default', function(callback) {
 gulp.task('build', function (callback) {
   runSequence('clean',
     'copy-build',
+    'index',
     callback);
 });
 
@@ -31,4 +33,13 @@ gulp.task('copy-app-js', function () {
 gulp.task('copy-vendor-js', function() {
   return gulp.src('./vendor/**/*.js', {cwd:'vendor/**'})
     .pipe(gulp.dest('./build/vendor'));
+});
+
+gulp.task('index', function () {
+  return gulp.src('./src/index.html')
+    .pipe(inject(
+      gulp.src(['./build/vendor/**/*.js', './build/app/**/*.js', './build/assets/css/**/*.css']), {
+        ignorePath: 'build'
+      }))
+    .pipe(gulp.dest("./build"));
 });
