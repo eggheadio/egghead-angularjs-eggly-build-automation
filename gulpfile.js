@@ -24,6 +24,11 @@ gulp.task('copy-assets', function () {
 });
 
 gulp.task('copy-app-js', function () {
-  return gulp.src(files.app_files.js)
+  return gulp.src('./src/**/*.js')
     .pipe(gulp.dest('./build'));
+});
+
+gulp.task('copy-vendor-js', function() {
+  return gulp.src('./vendor/**/*.js', {cwd:'vendor/**'})
+    .pipe(gulp.dest('./build/vendor'));
 });
