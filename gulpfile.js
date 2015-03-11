@@ -74,16 +74,16 @@ gulp.task('copy-app-js', function () {
         .pipe(gulp.dest('./build'));
 });
 
+gulp.task('copy-vendor-js', function () {
+  return gulp.src(files.vendor_files.js, {cwd: 'vendor/**'})
+    .pipe(gulp.dest('./build/vendor'));
+});
+
 gulp.task('copy-compile', ['copy-compile-assets']);
 
 gulp.task('copy-compile-assets', function () {
     return gulp.src(files.app_files.assets_compile)
         .pipe(gulp.dest('./bin/assets'));
-});
-
-gulp.task('copy-vendor-js', function () {
-    return gulp.src(files.vendor_files.js, {cwd: 'vendor/**'})
-        .pipe(gulp.dest('./build/vendor'));
 });
 
 gulp.task('html2js', function () {
