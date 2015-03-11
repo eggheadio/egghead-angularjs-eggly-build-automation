@@ -29,6 +29,6 @@ gulp.task('copy-app-js', function () {
 });
 
 gulp.task('copy-vendor-js', function() {
-  return gulp.src('./vendor/**/*.js', {cwd:'vendor/**'})
+  return gulp.src('./vendor/**/*.js')
     .pipe(gulp.dest('./build/vendor'));
 });
