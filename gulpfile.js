@@ -18,7 +18,19 @@ gulp.task('clean', function (callback) {
   del(['./build'], {force: true}, callback)
 });
 
-gulp.task('copy-build', ['copy-assets', 'copy-app-js', 'copy-vendor-js']);
+gulp.task('copy-build', ['copy-html', 'copy-json', 'copy-assets', 'copy-app-js', 'copy-vendor-js']);
+
+// Intermediate step
+gulp.task('copy-html', function () {
+  return gulp.src(['./src/**/*.html', '!./src/index.html'])
+    .pipe(gulp.dest('./build'));
+});
+
+// Intermediate step
+gulp.task('copy-json', function () {
+  return gulp.src('./src/**/*.json')
+    .pipe(gulp.dest('./build'));
+});
 
 gulp.task('copy-assets', function () {
   return gulp.src('./src/assets/**/*')
