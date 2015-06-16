@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/eggheadio/egghead-angularjs-eggly-build-automation",
   "devDependencies": {
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "run-sequence": "^1.1.0"
   }
 }
