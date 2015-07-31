@@ -2,20 +2,20 @@ var gulp = require('gulp'),
   del = require('del'),
   runSequence = require('run-sequence'),
   inject = require('gulp-inject'),
-  serve = require('gulp-serve');
+  serve = require('gulp-serve'),
+  jshint = require('gulp-jshint');
 
 
 var files = require('./gulp/gulp.config.js');
 
 gulp.task('default', function(callback) {
-  runSequence('build', callback);
+  runSequence('build', 'watch', 'serve', callback);
 });
 
 gulp.task('build', function (callback) {
   runSequence('clean',
     'copy-build',
     'index',
-    'serve',
     callback);
 });
 
@@ -59,3 +59,14 @@ gulp.task('copy-vendor-js', function() {
   return gulp.src('./vendor/**/*.js')
     .pipe(gulp.dest('./build/vendor'));
 });
+
+gulp.task('lint', function() {
+  return gulp.src(files.app_files.js)
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
+
+gulp.task('watch', function () {
+  gulp.watch(files.app_files.js, ['lint', 'build']);
+});
+

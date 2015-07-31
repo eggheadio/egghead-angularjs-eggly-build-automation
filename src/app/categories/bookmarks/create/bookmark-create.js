@@ -17,7 +17,7 @@ angular.module('categories.bookmarks.create', [
         function returnToBookmarks() {
             $state.go('eggly.categories.bookmarks', {
                 category: $stateParams.category
-            })
+            });
         }
 
         function cancelCreating() {

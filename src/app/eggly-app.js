@@ -12,6 +12,10 @@ angular.module('Eggly', [
             })
         ;
 
+        var someMethod = function() {
+
+        };
+
         $urlRouterProvider.otherwise('/');
     })
 ;

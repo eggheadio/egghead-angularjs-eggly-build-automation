@@ -15,13 +15,13 @@ angular.module('categories.bookmarks.edit', [])
         function returnToBookmarks() {
             $state.go('eggly.categories.bookmarks', {
                 category: $stateParams.category
-            })
+            });
         }
 
         function updateBookmark() {
             editBookmarkCtrl.bookmark = angular.copy(editBookmarkCtrl.editedBookmark);
             BookmarksModel.updateBookmark(editBookmarkCtrl.editedBookmark);
-            returnToBookmarks();
+            returnToBookmarks()
         }
 
         function cancelEditing() {
