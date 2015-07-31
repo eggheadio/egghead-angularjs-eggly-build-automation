@@ -6,14 +6,13 @@ var gulp = require('gulp'),
 
 
 gulp.task('default', function(callback) {
-  runSequence('build', callback);
+  runSequence('build', 'serve', callback);
 });
 
 gulp.task('build', function (callback) {
   runSequence('clean',
     'copy-build',
     'index',
-    'serve',
     callback);
 });
 
