@@ -8,14 +8,13 @@ var gulp = require('gulp'),
 var files = require('./gulp/gulp.config.js');
 
 gulp.task('default', function(callback) {
-  runSequence('build', callback);
+  runSequence('build', 'serve', callback);
 });
 
 gulp.task('build', function (callback) {
   runSequence('clean',
     'copy-build',
     'index',
-    'serve',
     callback);
 });
 
