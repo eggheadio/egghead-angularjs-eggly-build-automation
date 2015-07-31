@@ -1,7 +1,9 @@
 var gulp = require('gulp'),
   del = require('del'),
   runSequence = require('run-sequence'),
-  inject = require("gulp-inject");
+  inject = require('gulp-inject'),
+  serve = require('gulp-serve');
+
 
 var files = require('./gulp/gulp.config.js');
 
@@ -13,8 +15,11 @@ gulp.task('build', function (callback) {
   runSequence('clean',
     'copy-build',
     'index',
+    'serve',
     callback);
 });
+
+gulp.task('serve', serve('build'));
 
 gulp.task('index',function(){
   return gulp.src('./src/index.html')
