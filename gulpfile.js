@@ -13,7 +13,7 @@ gulp.task('build', function (callback) {
 });
 
 gulp.task('clean', function (callback) {
-  del(['./build'], {force: true}, callback)
+  return del(['./build'], {force: true});
 });
 
 gulp.task('copy-build', ['copy-html', 'copy-json', 'copy-assets', 'copy-app-js', 'copy-vendor-js']);
