@@ -28,7 +28,7 @@ gulp.task('index',function(){
     .pipe(gulp.dest('./build'));
 });
 
-gulp.task('clean', function (callback) {
+gulp.task('clean', function () {
   return del(['./build'], {force: true});
 });
 
