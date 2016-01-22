@@ -12,7 +12,7 @@ gulp.task('build', function (callback) {
     callback);
 });
 
-gulp.task('clean', function (callback) {
+gulp.task('clean', function () {
   return del(['./build'], {force: true});
 });
 
