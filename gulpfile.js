@@ -26,7 +26,7 @@ gulp.task('index',function(){
     .pipe(gulp.dest(files.build_dir));
 });
 
-gulp.task('clean', function (callback) {
+gulp.task('clean', function () {
  return del([files.build_dir], {force: true});
 });
 
