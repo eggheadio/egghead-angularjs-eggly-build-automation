@@ -31,7 +31,6 @@ angular.module('categories.bookmarks', [
 
         bookmarksListCtrl.getCurrentCategory = CategoriesModel.getCurrentCategory;
         bookmarksListCtrl.getCurrentCategoryName = CategoriesModel.getCurrentCategoryName;
-        bookmarksListCtrl.deleteBookmark = BookmarksModel.deleteBookmark;
     })
 
 ;
