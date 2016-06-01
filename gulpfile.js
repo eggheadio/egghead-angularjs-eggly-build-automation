@@ -51,15 +51,15 @@ gulp.task('build-src', function (callback) {
 /*
  Use 'del', a standard npm lib, to completely delete the build dir
  */
-gulp.task('clean', function (callback) {
-    del(['./build'], {force: true}, callback)
+gulp.task('clean', function () {
+   return del(['./build'], {force: true});
 });
 
 /*
  Use 'del', a standard npm lib, to completely delete the bin (production) dir
  */
-gulp.task('clean-bin', function (callback) {
-    del(['./bin'], {force: true}, callback)
+gulp.task('clean-bin', function () {
+   return del(['./bin'], {force: true});
 });
 
 gulp.task('copy-build', ['copy-assets', 'copy-app-js', 'copy-vendor-js']);
