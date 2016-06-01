@@ -27,8 +27,8 @@ gulp.task('index',function(){
     .pipe(gulp.dest(files.build_dir));
 });
 
-gulp.task('clean', function (callback) {
-  del([files.build_dir], {force: true}, callback)
+gulp.task('clean', function () {
+ return del([files.build_dir], {force: true});
 });
 
 gulp.task('copy-build', ['copy-html', 'copy-json', 'copy-assets', 'copy-app-js', 'copy-vendor-js']);
